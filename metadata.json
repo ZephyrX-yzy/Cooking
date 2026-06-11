@@ -1,0 +1,6 @@
+{
+  "name": "菜谱大全",
+  "description": "一个离线运行、内置100+款精美菜谱的现代化美食App，支持烹饪模式、份量比例缩放、每周菜单、智能购物清单、冰箱存货与过期提醒、自定义菜谱及成就系统。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
