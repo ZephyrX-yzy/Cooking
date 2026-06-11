@@ -3,9 +3,9 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 
-export default defineConfig(({ command }) => {
-  // 运行开发服务器时使用 '/'，构建生产版本时一律使用 '/Cooking/' 确保 GitHub Pages 二级目录正常加载
-  const base = command === 'serve' ? '/' : '/Cooking/';
+export default defineConfig(() => {
+  // 使用相对路径 './' 可确保无论仓库名叫什么、部署在哪个目录下，静态资源均能完美加载
+  const base = './';
 
   return {
     base,
