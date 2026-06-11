@@ -3,10 +3,9 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 
-export default defineConfig(() => {
-  // 当在 GitHub Actions 编译时自动使用仓库名 '/Cooking/' 作为 base 路径，其他环境使用 './' 适配
-  const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
-  const base = isGithubActions ? '/Cooking/' : './';
+export default defineConfig(({ command }) => {
+  // 运行开发服务器时使用 '/'，构建生产版本时一律使用 '/Cooking/' 确保 GitHub Pages 二级目录正常加载
+  const base = command === 'serve' ? '/' : '/Cooking/';
 
   return {
     base,
